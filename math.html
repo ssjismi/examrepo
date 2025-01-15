@@ -1,0 +1,139 @@
+<html>
+<body>
+<table>
+<tr>
+<td>Enter a number</td>
+<td><input type="text" name="in1" id="in1"></td>
+</tr>
+
+<tr>
+<td>Enter a decimal number</td>
+<td><input type="text" name="in2" id="in2"></td>
+</tr>
+
+<tr>
+<td>Enter a power</td>
+<td><input type="text" name="in3" id="in3"></td>
+</tr>
+
+<tr>
+<td>Enter a degree</td>
+<td><input type="text" name="in4" id="in4"></td>
+</tr>
+
+<tr>
+<td><input type="submit" onclick="submit()" value="submit"></td>
+</table>
+
+<table>
+<tr>
+<td>Area of circle using math.pi</td>
+<td><span id="out1"></span></td>
+</tr>
+
+<tr>
+<td>square root of no using math.sqrt</td>
+<td><span id="out2"></span></td>
+</tr>
+
+<tr>
+<td>Round of no using math.round</td>
+<td><span id="out3"></span></td>
+</tr>
+
+<tr>
+<td>Round of no using math.floor</td>
+<td><span id="out4"></span></td>
+</tr>
+
+<tr>
+<td>Round of no using math.ceil</td>
+<td><span id="out5"></span></td>
+</tr>
+
+<tr>
+<td>Absolute of no using math.abs</td>
+<td><span id="out6"></span></td>
+</tr>
+
+<tr>
+<td>sign of no using math.sign</td>
+<td><span id="out7"></span></td>
+</tr>
+
+
+<tr>
+<td>maxi of no using math.max</td>
+<td><span id="out8"></span></td>
+</tr>
+
+<tr>
+<td>min of no using math.min</td>
+<td><span id="out9"></span></td>
+</tr>
+
+<tr>
+<td>sin of no using math.sin</td>
+<td><span id="out10"></span></td>
+</tr>
+
+<tr>
+<td>cos of no using math.cos</td>
+<td><span id="out11"></span></td>
+</tr>
+
+<tr>
+<td> Random no using math.random</td>
+<td><span id="out12"></span></td>
+</tr>
+
+<tr>
+<td> Log no using math.log</td>
+<td><span id="out13"></span></td>
+</tr>
+
+<tr>
+<td> pow  using math.pow</td>
+<td><span id="out14"></span></td>
+</tr>
+
+<tr>
+<td> round  using math.trunc</td>
+<td><span id="out15"></span></td>
+</tr>
+
+
+
+</table>
+
+<script>
+function submit()
+{
+ var in1=parseFloat(document.getElementById('in1').value);
+ var in2=parseFloat(document.getElementById('in2').value);
+ var in3=parseFloat(document.getElementById('in3').value);
+ var in4=parseFloat(document.getElementById('in4').value);
+ 
+ document.getElementById("out1").innerHTML=Math.PI*in1*in1;
+ document.getElementById("out2").innerHTML=Math.sqrt(in1);
+ document.getElementById("out3").innerHTML=Math.round(in2);
+ document.getElementById("out4").innerHTML=Math.floor(in2);
+ document.getElementById("out5").innerHTML=Math.ceil(in2);
+ document.getElementById("out6").innerHTML=Math.abs(in2);
+ document.getElementById("out7").innerHTML=Math.sign(in1);
+ document.getElementById("out8").innerHTML=Math.max(in1,in2);
+ document.getElementById("out9").innerHTML=Math.min(in1,in2);
+ document.getElementById("out10").innerHTML=Math.sin(in4*Math.PI/180);
+ document.getElementById("out11").innerHTML=Math.cos(in4*Math.PI/180);
+ document.getElementById("out12").innerHTML=Math.random();
+ document.getElementById("out13").innerHTML=Math.log(in1);
+ document.getElementById("out14").innerHTML=Math.pow(in1,in3); 
+ document.getElementById("out15").innerHTML=Math.trunc(in2);
+}
+</script>
+</body>
+</html>
+
+
+
+

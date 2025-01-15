@@ -1,0 +1,13 @@
+<html>
+<body>
+<input type="submit" value="submit" id="btn">
+<script>
+document.getElementById("btn").addEventListener("click",colorchange);
+function colorchange()
+{
+ var color='#'+Math.floor(Math.random()*12345634).toString(16);
+ document.body.style.background=color;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+QUIZ</head>
+<body>
+<center><h1>QUIZ</h1></center>
+<form>
+<label>q1.Father of computer_____</label><br><br>
+<input type="radio" name="qn1" value="qn1an1" id="an1">Charles Babbage<br><br>
+<input type="radio" name="qn1" value="qn1an2">hocking<br><br>
+<input type="radio" name="qn1" value="qn1an3">Steve<br><br>
+<label>q2.Brain of computer____</label><br><br>
+
+<input type="radio" name="qn2" value="qn2an1">ALU<br><br>
+<input type="radio" name="qn2" value="qn2an2" id="an2">CPU<br><br>
+<input type="radio" name="qn2" value="qn2an3">Memory<br><br>
+<label>q3.Identify Input device</label><br><br>
+
+<input type="radio" name="qn3" value="qn3an1">speaker<br><br>
+<input type="radio" name="qn3" value="qn3an2">Printer<br><br>
+<input type="radio" name="qn3" value="qn3an3" id="an3">Keyboard<br><br>
+<label>q4.CPU Expansion</label><br><br>
+
+<input type="radio" name="qn4" value="qn4an1">Control print Unit<br><br>
+<input type="radio" name="qn4" value="qn4an2" id="an4">Central processing Unit<br><br>
+<input type="radio" name="qn4" value="qn4an3">Central print Unit<br><br>
+<input type="submit" Onclick="result()" value="submit quiz">
+</form>
+<script>
+function result()
+{
+ var score=0;
+ if(document.getElementById("an1").checked)score+=1;
+ if(document.getElementById("an2").checked)score+=1;
+ if(document.getElementById("an3").checked)score+=1;
+ if(document.getElementById("an4").checked)score+=1;
+ alert("the total scoreis"+score+"out of 4");
+}
+</script>
+</body>
+</html>

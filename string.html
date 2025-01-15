@@ -1,0 +1,152 @@
+<html>
+<body>
+<table>
+<tr>
+<td>Enter a string:</td>
+<td><input type="text" name="in1" id="in1"></td>
+</tr>
+
+<tr>
+<td>Search a string:</td>
+<td><input type="text" name="in2" id="in2"></td>
+</tr>
+
+<tr>
+<td>slice a string:</td>
+<td><input type="number" name="in3" id="in3" placeholder="Start"></td>
+<td><input type="number" name="in4" id="in4" placeholder="End"></td>
+</tr>
+
+<tr>
+<td>Enter the substring to replace:</td>
+<td><input type="text" name="in5" id="in5"></td>
+</tr>
+
+<tr>
+<td>Enter the string to replace:</td>
+<td><input type="text" name="in6" id="in6"></td>
+</tr>
+
+<tr>
+<td>Enter the string to concatenate:</td>
+<td><input type="text" name="in7" id="in7"></td>
+</tr>
+
+<tr>
+<td>Enter the string to pad:</td>
+<td><input type="text" name="in8" id="in8"></td>
+</tr>
+
+<tr>
+<td><input type="submit" onclick="submit()" value="submit"></td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td>Length of string is:</td>
+<td><span id="out1"></span></td>
+</tr>
+
+<tr>
+<td>Index of search string:</td>
+<td><span id="out2"></span></td>
+</tr>
+
+<tr>
+<td>sliced string:</td>
+<td><span id="out3"></span></td>
+</tr>
+
+<tr>
+<td>substring:</td>
+<td><span id="out4"></span></td>
+</tr>
+
+<tr>
+<td>replaced string:</td>
+<td><span id="out5"></span></td>
+</tr>
+
+<tr>
+<td>uppercase:</td>
+<td><span id="out6"></span></td>
+</tr>
+
+<tr>
+<td>Lowercase:</td>
+<td><span id="out7"></span></td>
+</tr>
+
+<tr>
+<td>Concatenated string:</td>
+<td><span id="out8"></span></td>
+</tr>
+
+<tr>
+<td>padding at beginning:</td>
+<td><span id="out9"></span></td>
+</tr>
+
+<tr>
+<td>Padding at end:</td>
+<td><span id="out10"></span></td>
+</tr>
+
+<tr>
+<td>substring:</td>
+<td><span id="out11"></span></td>
+</tr>
+</table>
+<script>
+function submit()
+{
+ var in1=document.getElementById("in1").value;
+ var in2=document.getElementById("in2").value;
+ var in3=document.getElementById("in3").value;
+ var in4=document.getElementById("in4").value;
+ var in5=document.getElementById("in5").value;
+ var in6=document.getElementById("in6").value;
+ var in7=document.getElementById("in7").value;
+ var in8=document.getElementById("in8").value;
+ 
+ var out1=in1.length
+ document.getElementById("out1").innerHTML=out1;
+
+ var out2=in1.indexOf(in2);
+ document.getElementById("out2").innerHTML=out2;
+
+ var out3=in1.slice(in3,in4);
+ document.getElementById("out3").innerHTML=out3;
+
+ var out4=in1.substr(in5,in4-in3);
+ document.getElementById("out4").innerHTML=out4;
+
+ var out5=in1.replace(in5,in6);
+ document.getElementById("out5").innerHTML=out5;
+
+ var out6=in1.toUpperCase();
+ document.getElementById("out6").innerHTML=out6;
+
+ var out7=in1.toLowerCase();
+ document.getElementById("out7").innerHTML=out7;
+
+ var out8=in1.concat(in7);
+ document.getElementById("out8").innerHTML=out8;
+
+ var out9=in1.padStart(30,in8);
+ document.getElementById("out3").innerHTML=out9;
+ 
+ var out10=in1.padEnd(30,in8);
+ document.getElementById("out10").innerHTML=out10;
+
+ var out11=in1.substring(in3,in4);
+ document.getElementById("out11").innerHTML=out11;
+}
+</script>
+</body>
+</html>
+
+
+
+

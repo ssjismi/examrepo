@@ -1,0 +1,89 @@
+<html>
+<body>
+<center>
+<form action="" method="POST" name="form" onsubmit="return validateform()">
+<table>
+<tr>
+<th>Enter your name:</th>
+<td><input type="text" name="fname"></td>
+</tr>
+
+<tr>
+<th>Enter the mailid:</th>
+<td><input type="email" name="email"></td>
+</tr>
+
+<tr>
+<th>Enter your number:</th>
+<td><input type="text" name="mobile"></td>
+</tr>
+
+<tr>
+<th>Enter your username:</th>
+<td><input type="text" name="uname"></td>
+</tr>
+
+<tr>
+<th>Enter your password:</th>
+<td><input type="password" name="passcode"></td>
+</tr>
+<tr>
+<th><input type="submit" value="submit"></th>
+</tr>
+</table>
+</center>
+<script>
+function validateform()
+{
+ var fname=document.form.fname.value;
+ var email=document.form.email.value;
+ var mobile=document.form.mobile.value;
+ var uname=document.form.uname.value;
+ var passcode=document.form.passcode.value;
+  
+ var re=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+ var ren=/[0-9!@#$%^&*]/
+ 
+ if(fname=="")
+ {
+  alert("Enter the firstname");
+  document.form.fname.focus();
+  return false;
+ }
+ else if(ren.test(fname))
+ {
+  alert("enter a valid name");
+ return false;
+ }
+ if(mobile=="")
+ {
+  alert("enter the mobile number!!");
+  document.form.mobile.focus();
+  return false;
+ }
+ else if(mobile.length!=10)
+ {
+  alert("number should have 10 digits");
+  return false;
+ }
+ else if(isNaN(mobile))
+ {
+  alert("enter a valid mobile number!!");
+  return false;
+ }
+ if(uname=="")
+ {
+  alert("enter a username");
+  document.form.uname.focus();
+  return false;
+ }
+ if(passcode="" || passcode.length<8 || !re.test(passcode))
+ {
+  alert("Enter a passcode"+'\n'+"Atleast one lowercase & upper letter &digit and special characters");
+  document.form.passcode.focus();
+  return false;
+ }
+}
+</script>
+</body>
+</html>
