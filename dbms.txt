@@ -1,0 +1,34 @@
+ crea
+te table Studentdetail(rollno int primary key,sname varchar(5),saddress varchar(10));
+
+ desc Studentdetail;
+create table marksheetdetail(rollno int references Studentdetail(rollno),sub1 varchar(5),sub2 varchar(5),sub3 varchar(10));
+insert into marksheetdetail values(3,60,87,33);
+select * from marksheetdetail;
+alter table marksheetdetail add grade varchar(5);
+update marksheetdetail set grade='C' where rollno=3;
+alter table Studentdetail add phoneno varchar(15) constraint lc check (length(phoneno)=10);
+select * from Studentdetail;
+select sname from Studentdetail where saddress='pattom';
+select sname from Studentdetail where rollno=3;
+select sname from Studentdetail where saddress='pattom';
+ alter table marksheetdetail drop column sub2;
+select (sub1+sub3)*2 as double from marksheetdetail;
+update Studentdetail set phoneno='1223456660' where sname='Sachi';
+select sub1+sub3 as totalmark,(sub1+sub3)*2 as double,(sub1+sub3)*3 as triple from marksheetdetail where rollno=2;
+select max(sub3) as greatest,min(sub3) as least,avg(sub3) as avg  from marksheetdetail;
+select count(rollno) as totalstudent,COUNT(CASE WHEN saddress= 'nalan' then 1 end) from Studentdetail;
+SELECT COUNT(DISTINCT sub1) AS Distinct_Marks
+FROM marksheetdetail;
+select count(rollno) as totalstudents from Studentdetail;
+select count(sname) as totalstudents from Studentdetail where saddress='nalan';
+create table stud(studid int primary key,
+create table department(deptid int primary key,name varchar(10));
+create table companytable(compid int primary key,name varchar(10),city varchar(10),no_of_emp int,e_id int);
+desc companytable;
+create table Employeetable(empid int primary key,name varchar(10),c_id int references companytable(compid),designation varchar(10),salary int,city varchar(10));
+create table studenttable(stdid int primary key,name varchar(10),class int,city varchar(10),totalmarks int,percentage int,deptid int references department(deptid));
+create table staff(staffid int primary key,name varchar(10),deptid int references department(deptid),designation varchar(20),salary int,city varchar(20));
+insert into department values(3,'mba');
+insert into companytable values(3,'spericorn','ernakulam',4);
+

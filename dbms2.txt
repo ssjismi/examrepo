@@ -1,0 +1,115 @@
+ crea
+te table Studentdetail(rollno int primary key,sname varchar(5),saddress varchar(10));
+
+ desc Studentdetail;
+create table marksheetdetail(rollno int references Studentdetail(rollno),sub1 varchar(5),sub2 varchar(5),sub3 varchar(10));
+insert into marksheetdetail values(3,60,87,33);
+select * from marksheetdetail;
+alter table marksheetdetail add grade varchar(5);
+update marksheetdseletail set grade='C' where rollno=3;
+alter table Studentdetail add phoneno varchar(15) constraint lc check (length(phoneno)=10);
+select * from Studentdetail;
+select sname from Studentdetail where saddress='pattom';
+select sname from Studentdetail where rollno=3;
+select sname from Studentdetail where saddress='pattom';
+ alter table marksheetdetail drop column sub2;
+select (sub1+sub3)*2 as double from marksheetdetail;
+update Studentdetail set phoneno='1223456660' where sname='Sachi';
+select sub1+sub3 as totalmark,(sub1+sub3)*2 as double,(sub1+sub3)*3 as triple from marksheetdetail where rollno=2;
+select max(sub3) as greatest,min(sub3) as least,avg(sub3) as avg  from marksheetdetail;
+select count(rollno) as totalstudent,COUNT(CASE WHEN saddress= 'nalan' then 1 end) from Studentdetail;
+SELECT COUNT(DISTINCT sub1) AS Distinct_Marks
+FROM marksheetdetail;
+select count(rollno) as totalstudents from Studentdetail;
+select count(sname) as totalstudents from Studentdetail where saddress='nalan';
+create table stud(studid int primary key,
+
+create table department(deptid int primary key,name varchar(10));
+create table companytable(compid int primary key,name varchar(10),city varchar(10),no_of_emp int);
+desc companytable;
+create table Employeetable(empid int primary key,name varchar(10),c_id int references companytable(compid),designation varchar(10),salary int,city varchar(10));
+create table studenttable(stdid int primary key,name varchar(10),class int,city varchar(10),totalmarks int,percentage int,deptid int references department(dept_id));
+create table staff(staffid int primary key,name varchar(10),deptid int references department(deptid),designation varchar(20),salary int,city varchar(20));
+insert into department values(3,'ca');
+insert into companytable values(3,'spericorn','ernakulam',4);
+insert into Employeetable values(1,'Uday',1,'clerk',26000,'tvm');
+insert into Employeetable values(2,'Manu',2,'manager',36000,'ernakulam');
+insert into Employeetable values(3,'Ravi',3,'assistant',25000,'tvm');
+select * from studenttable;
+select * from Employeetable;
+select * from department;
+select * from staff;
+select * from companytable;
+
+desc Employeetable;
+desc studenttable;
+insert into companytable values(2,'muthoot','ernakulam',3);
+insert into Employeetable values(2,'Manu',2,'manager',36000,'ernakulam');
+
+insert into studenttable values(1,'Rakhu','11','tvm',80,70,1);
+insert into studenttable values(2,'James','12','attingal',90,80,2);
+insert into studenttable values(3,'Mathew',10,'ernakulam',50,30,3);
+insert into studenttable values(4,'alex',12,'attukal',90,85,3);
+
+insert into studenttable values(3,'Mathew','10','ernakulam',50,30,3);
+insert into staff values(1,'Athira','1','Assistant',5000,'erumeli');
+insert into staff values(4,'Ayil','1','Assistent professor',55000,'tvm');
+insert into staff values(2,'Anjali','2','Mayor',25000,'Maruthoor');
+insert into staff values(3,'Ram','3','Manager',26000,'tvm');
+a)select * from studenttable order by deptid;
+b)select * from Employeetable;
+select * from staff where salary>20000;
+select * from studenttable where percentage >80 and percentage<90;
+
+select compid from companytable where no_of_emp>3;
+
+select Employeetable.* from Employeetable,companytable  where Employeetable.c_id=companytable.compid and companytable.no_of_emp>3;
+update Employeetable set salary=salary*(8/100) where designation='clerk' and city='ernakulam';
+select staff.staff_name from staff,studenttable where staff.dept_id=studenttable.deptid and staff.salary>25000 and staff.city=studenttable.city;
+select Employeetable.* from Employeetable,companytable where  Employeetable.c_id=companytable.compid and companytable.no_of_emp=(SELECT MAX(no_of_emp) FROM companytable);
+update staff set salary=salary+(salary*(10/100)) where designation='Assistent professor';
+select * from studenttable where percentage>80 and percentage<90;
+update Employeetable set salary=salary+(salary*(8/100)) where Employeetable.c_id=companytable.compid and Employeetable.city='ernakulam' and Employeetable.designation='clerk' and Employeetable.city=companytable.city;
+select Employeetable.name from Employeetable,companytable where Employeetable.c_id=companytable.compid and Employeetable.city=companytable.city;
+k.select count(staffid), department.name from staff,department where staff.deptid=department.deptid group by department.name;
+
+
+
+update Employeetable set salary=salary+(salary*(8/100)) where  city='ernakulam' and designation='manager' and city in
+(select Employeetable.city from companytable,Employeetable where  Employeetable.c_id=companytable.compid and Employeetable.city=companytable.city);
+
+select staff.name,studenttable.name from staff,studenttable where staff.stdid=studenttable.stdid;
+
+
+delete from employeetable where c_id=2 or c_id=3;
+delete from companytable where no_of_emp<5;
+
+ alter table staff add stdid int references studenttable(stdid);
+update staff set stdid=1 where name='Ram';
+update staff set stdid=2 where name='Athira';
+update staff set stdid=3 where name='Anjali';
+select staff.name,studenttable.name from staff,studenttable where staff.stdid=studenttable.stdid;
+
+
+
+select * from staff where  salary in (select max(salary) from staff group by deptid);
+
+
+
+e) select * from Employeetable where Employeetable.c_id=(select compid from companytable where no_of_emp>3);
+
+
+ select datediff('2014-08-31','2014-06-01') as days_between;
+select getdate() from dual;
+select current_date from dual;
+select current_timestamp from dual;
+
+
+select to_char(current_date,'mm-dd-yyyy')new_form from dual;
+select extract(day from current_date)day from dual;
+select extract(month from current_date)month from dual;
+select extract(year from current_date)year from dual;
+
+select to_char(current_date,'HH24-MI-SS')Time from dual;
+select to_char(current_date-1,'day month ddth yyyy')yesterday from dual;
+select abs(to_date('01-06-2023','dd-mm-yyyy')-to_date('31-08-2023','dd-mm-yyyy'))Days from dual;
