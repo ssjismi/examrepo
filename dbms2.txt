@@ -113,3 +113,25 @@ select extract(year from current_date)year from dual;
 select to_char(current_date,'HH24-MI-SS')Time from dual;
 select to_char(current_date-1,'day month ddth yyyy')yesterday from dual;
 select abs(to_date('01-06-2023','dd-mm-yyyy')-to_date('31-08-2023','dd-mm-yyyy'))Days from dual;
+
+
+
+6)
+
+a)create table student11(id int primary key,name varchar(10),mark int);
+insert into student11 values(1,'Aby',50);
+insert into student11 values(2,'Babu',70);
+insert into student11 values(3,'Alen',80);
+select * from student11;
+
+c)grant select on student11 to new_student11;
+grant update(name) on student11 to new_student11;
+
+
+revoke update on student11 from new_student11;
+
+b)create role new_student11;
+
+
+7)create table emp12(empid int primary key,name varchar (10),c_id int,designation varchar (25),salary int,city varchar (25));
+insert into emp12 values (1,'haidi',1,'manager',13000,'tvm');
